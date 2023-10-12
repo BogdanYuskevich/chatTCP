@@ -18,21 +18,17 @@ print(f"Сервер слухає на {HOST}:{PORT}...")
 client_socket, client_address = server_socket.accept()
 print(f"Підключено клієнта з адресою {client_address}")
 
-# Очікуємо та обробляємо дані від клієнта
 while True:
     data = client_socket.recv(1024)
     if not data:
         break
 
-    # Затримка 5 секунд
-    time.sleep(5)
-
-    # Перевірка, чи всі дані успішно відправлено
-    if not data:
-        break
-
     current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     print(f"[{current_time}] Отримано: {data.decode('utf-8')}")
+
+    # Перевірка, чи отримано команду для закриття з'єднання
+    if data.decode('utf-8') == 'exit':
+        break
 
 # Закриваємо з'єднання
 client_socket.close()
