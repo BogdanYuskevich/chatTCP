@@ -24,6 +24,13 @@ while True:
     if not data:
         break
 
+    # Затримка 5 секунд
+    time.sleep(5)
+
+    # Перевірка, чи всі дані успішно відправлено
+    if not data:
+        break
+
     current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     print(f"[{current_time}] Отримано: {data.decode('utf-8')}")
 
