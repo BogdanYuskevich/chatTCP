@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обробка форми</title>
+</head>
+<body>
+    <h1>Starting page</h1>
+
+    <form action="/cgi-bin/formhandler.py" method="post">
+        Enter credentials to order 4-dimensional pizza<br>
+        Username: <input type="text" name="username">
+        Password: <input type="password" name="password">
+        <br>
+        <input type="radio" name="lang" value="en"> English
+        <input type="radio" name="lang" value="ua"> Українська
+        <br>
+        <input type="checkbox" name="tomato" value="on"> Tomato
+        <input type="checkbox" name="salami" value="on"> Salami
+        <input type="checkbox" name="pineapple" value="on"> Pineapple
+        <input type="checkbox" name="olives" value="on"> Olives
+        <br>
+        <input type="submit" value="Order">
+        <input type="submit" name="delete_cookies" value="Delete Cookies">
+    </form>
+
+
+
+</body>
+</html>
